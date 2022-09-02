@@ -1,0 +1,29 @@
+server:
+  address: 0.0.0.0
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/snsTest?useSSL=false&characterEncoding=UTF-8
+    username: root
+    password: Wjsgusals2@
+  mvc:
+    static-path-patten : /static/**
+  resource:
+    static-locations : classpath:/static/
+    add-mapping : true
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
+
+  servlet:
+    multipart:
+      location: Users/jeonhyeonmin/Desktop/imageFile
+      maxFileSize: 200MB
+      maxRequestSize: 200MB
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
